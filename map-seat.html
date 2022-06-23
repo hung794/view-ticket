@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=9">
+    <meta name="description" content="Gambolthemes">
+    <meta name="author" content="Gambolthemes">
+    <title>Barren - Simple Online Event Ticketing System</title>
+
+    <link rel="icon" type="image/png" href="images/fav.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/night-mode.css" rel="stylesheet">
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/roomTicket.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <header class="header">
+        <div class="header-inner">
+            <nav
+                class="navbar navbar-expand-lg bg-barren barren-head navbar fixed-top justify-content-sm-start pt-0 pb-0">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span class="navbar-toggler-icon">
+                            <i class="fa-solid fa-bars"></i>
+                        </span>
+                    </button>
+                    <a class="navbar-brand order-1 order-lg-0 ml-lg-0 ml-2 me-auto" href="index.html">
+                        <div class="res-main-logo">
+                            <img src="images/logo-icon.svg" alt="">
+                        </div>
+                        <div class="main-logo" id="logo">
+                            <img src="images/logo.svg" alt="">
+                            <img class="logo-inverse" src="images/dark-logo.svg" alt="">
+                        </div>
+                    </a>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                        aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <div class="offcanvas-logo" id="offcanvasNavbarLabel">
+                                <img src="images/logo-icon.svg" alt="">
+                            </div>
+                            <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="offcanvas-top-area">
+                                <div class="create-bg">
+                                    <a href="create.html" class="offcanvas-create-btn">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span>Create Event</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe_5">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Explore Events
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-submenu">
+                                        <li><a class="dropdown-item" href="explore_events.html">Explore Events</a></li>
+                                        <li><a class="dropdown-item" href="venue_event_detail_view.html">Venue Event
+                                                Detail View</a></li>
+                                        <li><a class="dropdown-item" href="online_event_detail_view.html">Online Event
+                                                Detail View</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pricing.html">Pricing</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Blog
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-submenu">
+                                        <li><a class="dropdown-item" href="our_blog.html">Our Blog</a></li>
+                                        <li><a class="dropdown-item" href="blog_detail_view.html">Blog Detail View</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Help
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-submenu">
+                                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                        <li><a class="dropdown-item" href="help_center.html">Help Center</a></li>
+                                        <li><a class="dropdown-item" href="contact_us.html">Contact Us</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Pages
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-submenu">
+                                        <li>
+                                            <a class="dropdown-item submenu-item" href="#">Other Pages</a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item pe-5" href="sign_in.html">Sign In</a></li>
+                                                <li><a class="dropdown-item pe-5" href="sign_up.html">Sign Up</a></li>
+                                                <li><a class="dropdown-item pe-5" href="forgot_password.html">Forgot
+                                                        Password</a></li>
+                                                <li><a class="dropdown-item pe-5" href="about_us.html">About Us</a></li>
+                                                <li><a class="dropdown-item pe-5" href="checkout.html">Checkout</a></li>
+                                                <li><a class="dropdown-item pe-5" href="checkout_premium.html">Checkout
+                                                        Premium</a></li>
+                                                <li><a class="dropdown-item pe-5" href="invoice.html">Invoice</a></li>
+                                                <li><a class="dropdown-item pe-5" href="coming_soon.html">Coming
+                                                        Soon</a></li>
+                                                <li><a class="dropdown-item pe-5" href="error_404.html">Error 404</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item submenu-item" href="#">Create Event</a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item pe-5" href="create.html">Create</a></li>
+                                                <li><a class="dropdown-item pe-5" href="create_venue_event.html">Create
+                                                        Venue Event</a></li>
+                                                <li><a class="dropdown-item pe-5" href="create_online_event.html">Create
+                                                        Online Event</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item submenu-item" href="#">Events View</a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item pe-5"
+                                                        href="online_event_detail_view.html">Online Event Detail
+                                                        View</a></li>
+                                                <li><a class="dropdown-item pe-5"
+                                                        href="venue_event_detail_view.html">Venue Event Detail View</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a class="dropdown-item" href="booking_confirmed.html">Booking Confirmed</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="attendee_profile_view.html">Attendee Profile
+                                                View</a></li>
+                                        <li><a class="dropdown-item" href="organiser_profile_view.html">Organiser
+                                                Profile View</a></li>
+                                        <li><a class="dropdown-item" href="my_organisation_dashboard.html">Organization
+                                                Dashboard</a></li>
+                                        <li><a class="dropdown-item" href="sell_tickets_online.html">Sell Tickets
+                                                Online</a></li>
+                                        <li><a class="dropdown-item" href="refer_a_friend.html">Refer a Friend</a></li>
+                                        <li><a class="dropdown-item" href="term_and_conditions.html">Terms &
+                                                Conditions</a></li>
+                                        <li><a class="dropdown-item" href="privacy_policy.html">Privacy Policy</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offcanvas-footer">
+                            <div class="offcanvas-social">
+                                <h5>Follow Us</h5>
+                                <ul class="social-links">
+                                    <li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+                                    <li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    <li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                    <li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-header order-2">
+                        <ul class="align-self-stretch">
+                            <li>
+                                <a href="create.html" class="create-btn btn-hover">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>Create Event</span>
+                                </a>
+                            </li>
+                            <li class="dropdown account-dropdown">
+                                <a href="#" class="account-link" role="button" id="accountClick"
+                                    data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/profile-imgs/img-13.jpg" alt="">
+                                    <i class="fas fa-caret-down arrow-icon"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-account dropdown-menu-end"
+                                    aria-labelledby="accountClick">
+                                    <li>
+                                        <div class="dropdown-account-header">
+                                            <div class="account-holder-avatar">
+                                                <img src="images/profile-imgs/img-13.jpg" alt="">
+                                            </div>
+                                            <h5>John Doe</h5>
+                                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                                    data-cfemail="375d585f5953585277524f565a475b521954585a">[email&#160;protected]</a>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="profile-link">
+                                        <a href="my_organisation_dashboard.html" class="link-item">My Organisation</a>
+                                        <a href="organiser_profile_view.html" class="link-item">My Profile</a>
+                                        <a href="sign_in.html" class="link-item">Sign Out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="night_mode_switch__btn">
+                                    <div id="night-mode" class="fas fa-moon fa-sun"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+
+    <div class="wrapper">
+        <div class="breadcrumb-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-10">
+                        <div class="barren-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Seat Map</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="event-dt-block p-80">
+            <div class="container">
+                <div class="row">
+                    <div class="tbox-container">
+                        <div class="box-stage">
+                            <div class="movie-box">
+                                <div class="screen"></div>
+                                <div class="movie-box__bottom">
+                                    <div class="seat-alpha">
+                                        <!-- <div class="box-alpha">A</div>
+                                        <div class="box-alpha">B</div>
+                                        <div class="box-alpha">C</div>
+                                        <div class="box-alpha">D</div>
+                                        <div class="box-alpha">E</div>
+                                        <div class="box-alpha">F</div> -->
+                                    </div>
+                                    <!-- <div class="row-seat">
+                                        <div class="seat"></div>
+                                    </div> -->
+                                </div>
+                                <p class="title-annotation-choice">
+                                    You have selected position seat: <span id="positionSeat"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="box-info">
+                            <div class="box-info__film">
+                                <div class="box-info__film-detail">
+                                    <div class="box-info__film-image">
+                                        <img src="" alt="thumbnail film">
+                                    </div>
+                                    <div class="box-info__film-content">
+                                        <h4 class="box-info__film-name"></h4>
+                                        <div class="box-info__film-type">
+                                            <span class="box-info__film-room">C16</span>
+                                            <span>|</span>
+                                            <span class="box-info__film-stylefilm">2D</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-info__branch">
+                                    <div class="box-info__address">
+                                        <h4 class="box-info__address-title">CineStar Hai Bà Trưng</h4>
+                                    </div>
+                                    <div class="box-info__showtime">
+                                        <span class="box-info__showtime-title">14:10 - 16:00 | 18/06/2022</span>
+                                    </div>
+                                </div>
+                                <div class="box-info__price">
+                                    <span class="box-info__price-title">0 VND</span>
+                                </div>
+                                <button class="main-btn h_50 w-100 btn-pay disabled"><a href="#"
+                                        class="btn-pay__link">Thanh
+                                        Toán</a></button>
+                            </div>
+                            <div class="box-info__ticket-state">
+                                <ul class="showcase">
+                                    <li>
+                                        <div class="seat"></div>
+                                        <small>Available</small>
+                                    </li>
+                                    <li>
+                                        <div class="seat selected"></div>
+                                        <small>Selected</small>
+                                    </li>
+                                    <li>
+                                        <div class="seat occupied"></div>
+                                        <small>Occupied</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footer mt-auto">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-content">
+                            <h4>Company</h4>
+                            <ul class="footer-link-list">
+                                <li><a href="about_us.html" class="footer-link">About Us</a></li>
+                                <li><a href="help_center.html" class="footer-link">Help Center</a></li>
+                                <li><a href="faq.html" class="footer-link">FAQ</a></li>
+                                <li><a href="contact_us.html" class="footer-link">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-content">
+                            <h4>Useful Links</h4>
+                            <ul class="footer-link-list">
+                                <li><a href="create.html" class="footer-link">Create Event</a></li>
+                                <li><a href="sell_tickets_online.html" class="footer-link">Sell Tickets Online</a>
+                                </li>
+                                <li><a href="privacy_policy.html" class="footer-link">Privacy Policy</a></li>
+                                <li><a href="term_and_conditions.html" class="footer-link">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-content">
+                            <h4>Resources</h4>
+                            <ul class="footer-link-list">
+                                <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+                                <li><a href="our_blog.html" class="footer-link">Blog</a></li>
+                                <li><a href="refer_a_friend.html" class="footer-link">Refer a Friend</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-content">
+                            <h4>Follow Us</h4>
+                            <ul class="social-links">
+                                <li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a>
+                                <li><a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <li><a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <li><a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <li><a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            </ul>
+                        </div>
+                        <div class="footer-content">
+                            <h4>Download Mobile App</h4>
+                            <div class="download-app-link">
+                                <a href="#" class="download-btn"><img src="images/app-store.png" alt=""></a>
+                                <a href="#" class="download-btn"><img src="images/google-play.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-copyright-text">
+                            <p class="mb-0">© 2022, <strong>Barren</strong>. All rights reserved. Powered by
+                                Gambolthemes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/OwlCarousel/owl.carousel.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/night-mode.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const movieBoxBottom = document.querySelector('.movie-box__bottom')
+                , seatAlpha = document.querySelector('.seat-alpha')
+                , alphabet = [...'abcdefghijklmnopqrstuvwxyz'].map((alphabet) => alphabet.toUpperCase())
+                , url = 'http://localhost:3000/FilmDetail'
+                , nameFilm = document.querySelector('.box-info__film-name')
+                , btnPay = document.querySelector('.btn-pay')
+                , address = document.querySelector('.box-info__address-title')
+                , showtime = document.querySelector('.box-info__showtime-title')
+                , thumbnail = document.querySelector('.box-info__film-image img')
+                , totalPrice = document.querySelector('.box-info__price-title');
+            let ticketPosition = null;
+            //get data call aip
+            async function getData(url) {
+                let response = await fetch(url);
+                let data = await response.json();
+                return data;
+            }
+            // renderUi
+            (async function renderUI() {
+                try {
+                    let filmInfo = await getData(url);
+                    let { rowSeat, slotRow, occupiedSeats, ...filmDetail } = filmInfo;
+                    let rangeAlphabet = alphabet.splice(0, rowSeat);
+                    renderSeat(rowSeat, slotRow);
+                    renderRangeAlpha(rowSeat, rangeAlphabet);
+                    const seats = document.querySelectorAll('.row-seat .seat');
+                    renderOccupiedSeats(occupiedSeats, seats);
+                    //update detail film
+                    nameFilm.innerText = filmInfo.name;
+                    address.innerText = filmInfo.address;
+                    showtime.innerText = `${filmDetail.showtime} | ${filmDetail.openingDay}`;
+                    thumbnail.src = filmDetail.thumbnail;
+                    //add event listener selected seat 
+                    movieBoxBottom.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
+                            e.target.classList.toggle('selected');
+                            updateSelectedSeats();
+                        }
+                    });
+                    btnPay.addEventListener('click', (e) => {
+                        ticketPosition = updateSelectedSeats();
+                        console.log(ticketPosition);
+                    })
+                    //update state seats when user select seat
+                    const updateSelectedSeats = () => {
+                        //seat selected
+                        const selectedSeat = document.querySelectorAll('.row-seat .seat.selected');
+                        //set index for selected seat! Save to database
+                        const selectedSeatIndex = [...selectedSeat].map((seat) => {
+                            return 1 + [...seats].indexOf(seat);
+                        });
+                        const selectedSeatsAlpha = convertSeatIndexToAlpha(selectedSeatIndex, slotRow, rangeAlphabet);
+                        const positionSeat = document.querySelector('#positionSeat');
+                        positionSeat.innerText = selectedSeatsAlpha.join(',');
+                        updateTotal(selectedSeat.length, filmInfo.price);
+                        return {
+                            selectedSeatIndex,
+                            selectedSeatsAlpha
+                        }
+                    }
+                    //update price 
+                    const updateTotal = (slotCount, price) => {
+                        let total = slotCount * price;
+                        updateStateBtn(total)
+                        totalPrice.innerText = total.toLocaleString('it-IT', { style: 'currency', currency: 'VND' });
+                    }
+                    //update state btn pay :
+                    function updateStateBtn(total) {
+                        total === 0 ? btnPay.classList.add('disabled') : btnPay.classList.remove('disabled');
+                    }
+                    //render row seat and slot seat on row
+                    function renderSeat(rowSeat, slotRow) {
+                        // create row seat
+                        for (let i = 0; i < rowSeat; i++) {
+                            const rowSeat = document.createElement('div');
+                            rowSeat.classList.add('row-seat');
+                            //create slot seat on row
+                            for (let i = 0; i < slotRow; i++) {
+                                const seat = document.createElement('div');
+                                seat.classList.add('seat');
+                                rowSeat.appendChild(seat);
+                            }
+                            movieBoxBottom.appendChild(rowSeat);
+                        }
+                    }
+                    // render Range Alpha side
+                    function renderRangeAlpha(rowSeat, rangeAlphabet) {
+                        // alpha range
+                        for (let i = 0; i < rowSeat; i++) {
+                            const boxAlpha = document.createElement('div');
+                            boxAlpha.classList.add('box-alpha');
+                            boxAlpha.innerText = rangeAlphabet[i];
+                            seatAlpha.appendChild(boxAlpha);
+                        }
+                    }
+                    //render Occupied Seats  ;
+                    function renderOccupiedSeats(occupiedSeats, seats) {
+                        if (occupiedSeats.length >= 0 && occupiedSeats !== null) {
+                            occupiedSeats.forEach((seat) => {
+                                seats[seat - 1].classList.add('occupied');
+                            })
+                        }
+                    }
+                    //convertSeatIndexToAlpha
+                    function convertSeatIndexToAlpha(selectedSeatIndex, slotRow, rangeAlphabet) {
+                        let positionSeats = null;
+                        if (selectedSeatIndex.length >= 0) {
+                            positionSeats = selectedSeatIndex.map(index => {
+                                if (index % slotRow == 0) {
+                                    let positionAlpha = rangeAlphabet[index / slotRow - 1];
+                                    let positionRow = index / (index / slotRow);
+                                    positionSeat = positionAlpha + positionRow;
+                                    return positionSeat;
+                                } else if (index % slotRow != 0) {
+                                    let indexSeatAlpha = Math.ceil(index / slotRow);
+                                    let rowEnough = Math.ceil(index / slotRow) - 1;
+                                    let positionSeatAlpha = rangeAlphabet[indexSeatAlpha - 1];
+                                    let positionSeatAlphaRange = index - rowEnough * slotRow;
+                                    positionSeat = positionSeatAlpha + positionSeatAlphaRange;
+                                    return positionSeat;
+                                }
+                            })
+                        }
+                        return positionSeats;
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            }());
+        });
+
+    </script>
+</body>
+
+</html>

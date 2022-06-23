@@ -1,0 +1,236 @@
+body {
+    background-color: #ffffff !important;
+}
+
+.showing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.showing-info__film {
+    padding-top: 16px;
+    position: relative;
+    text-align: left;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.showing-info__film-name {
+    margin-left: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.showing-info__film-time {
+    margin-left: 0px;
+    margin-bottom: 20px;
+    line-height: 16px;
+    text-align: left;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.showing-info__film-time span {
+    display: inline-block;
+    margin-top: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.showing-info__schedule {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.box-schedule {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60px;
+    height: 56px;
+    margin-right: 4px;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.box-schedule>.schedule-week {
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+}
+
+.box-schedule>.schedule-day {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+
+.box-schedule.active {
+    color: #fff;
+    background-color: #6ac045 !important;
+}
+
+/*  */
+.showing-info__location {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+    margin-bottom: 20px;
+}
+
+.select-location {
+    color: rgb(42, 45, 52);
+    background: rgb(245, 247, 252);
+    line-height: 24px;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    padding: 12px 36px 12px 12px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    caret-color: rgb(45, 194, 117);
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+/*  */
+
+.showing-brand {
+    display: flex;
+}
+
+.list-brand {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    height: 100%;
+    flex-shrink: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+
+.list-brand .brand-item {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(42, 45, 52);
+    border-right: 1px solid rgb(45, 194, 117);
+    padding: 12px 16px;
+}
+
+.list-brand .brand-item.active {
+    background-color: rgb(245, 247, 252);
+}
+
+.list-brand .brand-item img {
+    width: 24px;
+    margin-right: 16px;
+    border-radius: 4px;
+    border: 1px solid rgb(245, 247, 252);
+    box-sizing: border-box;
+}
+
+.box-brand-address {
+    flex-grow: 1;
+    max-width: 66.6667%;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+.brand-address {
+    margin-bottom: 20px;
+}
+
+.brand-address__name {
+    color: rgb(42, 45, 52);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 8px;
+    cursor: pointer;
+
+}
+
+.brand-address__name svg.active {
+    transform: rotate(0deg) !important;
+}
+
+.brand-film-showingtime {
+    height: 122px;
+    border-radius: 8px;
+    padding: 24px 28px;
+    background-color: rgb(245, 247, 252);
+    font-weight: normal;
+    overflow: scroll;
+    transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1), padding 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brand-film-showingtime.active {
+    height: 0px;
+    visibility: hidden;
+    padding: 0;
+    transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1), padding 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.style-film {
+    color: rgb(42, 45, 52);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.box-showingtime {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-showingtime .showingtime a {
+    margin-bottom: 8px;
+    cursor: pointer;
+    margin-right: 8px;
+    display: inline-block;
+    text-align: center;
+    padding: 8px 16px;
+    border: 1px solid rgb(230, 235, 245);
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    font-style: normal;
+    color: rgb(42, 45, 52) !important;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+}
