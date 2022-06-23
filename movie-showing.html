@@ -8,9 +8,7 @@
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
     <title>Barren - Simple Online Event Ticketing System</title>
-
     <link rel="icon" type="image/png" href="images/fav.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,7 +18,6 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/night-mode.css" rel="stylesheet">
-
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
     <link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
@@ -476,7 +473,6 @@
             </div>
         </div>
     </footer>
-
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -510,6 +506,7 @@
             }
             //main handler
             (async function mainHandler() {
+                //render schedule here!
                 renderUISchedule();
                 // add event click for box-schedule  
                 const schedulesBox = document.querySelectorAll('.box-schedule');
@@ -517,25 +514,25 @@
                 // start here: 
                 try {
                     let data = await getData(url);
-                    updateData(data);
+                    renderData(data);
                 } catch (error) {
                     console.log(error)
                 }
             })();
-            //update data 
-            function updateData({ title, room, duration, locations, brands }) {
-                updateDataFilmDetail(title, room, duration)
-                updateDataLocation(locations)
-                updateBrand(brands);
+            //render UI data 
+            function renderData({ title, room, duration, locations, brands }) {
+                renderDataFilmDetail(title, room, duration)
+                renderDataLocation(locations)
+                renderDateBrand(brands);
             }
-            //update name, room
-            function updateDataFilmDetail(name, room, duration) {
+            //render name, room
+            function renderDataFilmDetail(name, room, duration) {
                 nameFilm.textContent = name;
                 roomFilm.textContent = room;
                 durationFilm.textContent = duration;
             }
-            //update select location
-            function updateDataLocation(locations) {
+            //render select location
+            function renderDataLocation(locations) {
                 locations.forEach(location => {
                     locationOption = document.createElement('option');
                     locationOption.value = location.id;
@@ -543,15 +540,11 @@
                     selectLocation.appendChild(locationOption);
                 })
             }
-
-            //update brands 
-            function updateBrand(brands) {
+            //render brands
+            function renderDateBrand(brands) {
                 brands.forEach((brand, index) => {
                     const brandItem = document.createElement('div');
                     brandItem.classList.add('brand-item')
-                    // if (index == 0) {
-                    //     brandItem.classList.add('active')
-                    // }
                     const imgIcon = document.createElement('img');
                     imgIcon.src = brand.icon_url;
                     imgIcon.alt = brand.name;
@@ -562,26 +555,21 @@
                     listBrand.appendChild(brandItem);
                 })
                 const brandItems = document.querySelectorAll('.brand-item');
-                handleClickBranItemsBox(brandItems, brands);
+                handleClickBrandItemsBox(brandItems, brands);
             }
-
             //update branch and show time
-
-            function updateBrachAndShowTime({ branch, ...rest }) {
+            function renderBrachAndShowTime({ branch, ...rest }) {
                 boxBrandAddress.innerHTML = "";
                 if (branch == undefined) {
                     return;
                 }
-                // console.log(branch)
                 //render branch here:
                 branch.forEach((branchAddress => {
-
                     if (branchAddress.showing_types.length == 0) {
                         return;
                     }
                     const brandAddress = document.createElement('div');
                     brandAddress.classList.add('brand-address');
-
                     const brandAddressName = document.createElement('div');
                     brandAddressName.classList.add('brand-address__name');
                     brandAddressName.innerHTML = `${branchAddress.name}
@@ -604,6 +592,7 @@
                         showingTime.classList.add('showingtime');
                         const link = document.createElement('a');
                         link.textContent = showing.start_time
+                        //link map-seat here
                         link.href = "/map-seat.html";
                         showingTime.appendChild(link);
                         boxShowingTime.appendChild(showingTime);
@@ -626,29 +615,23 @@
             }
             //handle selectLocation onchange
             selectLocation.addEventListener('change', (e) => {
+                // filter by location here
             })
-
-
             //add event click handler for BranItemsBox 
-            function handleClickBranItemsBox(brandItems, brands) {
+            function handleClickBrandItemsBox(brandItems, brands) {
                 brandItems.forEach((element, index) => {
                     element.addEventListener('click', (event) => {
                         if (element.classList.contains('active')) {
                             return;
                         }
-                        const branItem = getCurrentBranItemsBox();
+                        const branItem = document.querySelector('.brand-item.active');
                         if (branItem != null) {
                             branItem.classList.remove('active');
                         }
                         element.classList.add('active');
-                        updateBrachAndShowTime(brands[index])
+                        renderBrachAndShowTime(brands[index])
                     })
                 })
-            }
-            //
-            function getCurrentBranItemsBox() {
-                const brandItem = document.querySelector('.brand-item.active');
-                return brandItem;
             }
             //render UI schedule 
             function renderUISchedule() {
@@ -675,23 +658,19 @@
                     scheduleContainer.appendChild(scheduleBox);
                 }
             }
-            //add event click handler for scheduleBoxActive 
+            //add event click handler for scheduleBox active 
             function handleClickScheduleBox(schedulesBox) {
                 schedulesBox.forEach(element => {
                     element.addEventListener('click', (event) => {
                         if (element.classList.contains('active')) {
                             return;
                         }
-                        const scheduleBoxActive = getCurrentScheduleBox();
+                        const scheduleBoxActive = document.querySelector('.box-schedule.active');
                         scheduleBoxActive.classList.remove('active');
                         element.classList.add('active');
+                        //filter by opening date
                     })
                 })
-            }
-            //get current schedule box have class active
-            const getCurrentScheduleBox = () => {
-                const scheduleBoxActive = document.querySelector('.box-schedule.active');
-                return scheduleBoxActive;
             }
             //convert day to string
             function convertDayToString(lengthDays) {
